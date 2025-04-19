@@ -1,0 +1,26 @@
+.sidebar-contianer{
+    width: 22%;
+    background-color: #fff;
+
+}
+.sidebar-links-card{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    list-style: none;
+}
+.sidebar-link{
+    text-decoration: none;
+    display: flex;
+    color: #343333;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+.sidebar-icon{
+    font-size: 20px;
+    margin-right: 10px;
+}

@@ -1,0 +1,68 @@
+.place-order-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.placeOrder-card-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.placeOrder-card{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding-bottom: 40px;
+}
+.placeOrder-description{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.order-name{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+.placeOrder-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+.placeorder-img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.place-order-button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.placeOrder-quantity{
+    align-self: flex-end;
+    margin-right: 20px;
+}
+.quantity{
+    font-size: 15px;
+    margin-left: 10px;
+}
