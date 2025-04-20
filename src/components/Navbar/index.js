@@ -1,35 +1,25 @@
-import {Link} from 'react-router-dom';
-import { Component } from 'react';
-import AppContext from '../../context';
+import {Link , Navigate} from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './index.css';
 
-class Navbar extends Component {
-    render() {
-        return (
-            <AppContext.Consumer>
-                {value => {
-                    const {IsLoggedIn} = value
-                    console.log(IsLoggedIn)
-                    return (
-                        <div>
-                            <nav className="navbar">
-                                <Link to="/" className="navbar-link">
-                                    <img src="/F&V.png" alt="logo" className="navbar-logo" />
-                                </Link>
-                                {IsLoggedIn? (<div>
-                                    <Link to="/Profile"><button className="navbar-button">Profile</button></Link>
-                                </div>):(<div>
-                                    <Link to="/SignUp"><button className="navbar-button" >Sign Up</button></Link>
-                                    <Link to="/SignIn"><button className="navbar-button">Sign In</button></Link>
-                                </div>)}
-                            </nav>
-                        </div>
-                    )
-                    
-                }}
-            </AppContext.Consumer>
-        )
+const Navbar = () =>  {
+    const logoutBtn = () => {
+        Cookies.remove('jwt_token')
+        Navigate('/login')
     }
+
+    return (
+        <div>
+            <nav className="navbar">
+                <Link to="/home" className="navbar-link">
+                    <img src="/F&V.png" alt="logo" className="navbar-logo" />
+                </Link>
+                <div>
+                    <button className='logout-button' onClick={logoutBtn()}>Logout</button>
+                </div>
+            </nav>
+        </div>
+    )   
 }
 
 export default Navbar;

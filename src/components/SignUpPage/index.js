@@ -23,7 +23,7 @@ class SignUpPage extends Component {
     return (
       <AppContext.Consumer>
         {value => { 
-          const { setIsLoggedIn} = value
+          const { setIsLoggedIn,setUserDetails} = value
 
           this.onSubmitForm = async (event) => {
             event.preventDefault()
@@ -49,7 +49,8 @@ class SignUpPage extends Component {
               const data = await response.json()
               if (response.ok) {
                 console.log('User signed up successfully')
-                this.submitedSuccessful(data.token)
+
+                this.submitedSuccessful(data.token, data.user)
               } else {
                 this.setState({ error: data.message || 'Error signing up user' })
               }
@@ -59,8 +60,9 @@ class SignUpPage extends Component {
             }
           }
 
-          this.submitedSuccessful = (jwtToken) => {
+          this.submitedSuccessful = (jwtToken,user) => {
             setIsLoggedIn();
+            setUserDetails(user);
             Cookies.set('jwt_token', jwtToken, { expires: 100 })
             const { navigate } = this.props
             this.setState({ logged: true })

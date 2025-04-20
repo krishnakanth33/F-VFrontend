@@ -1,0 +1,13 @@
+.protected-route-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.protected-route-content{
+    display: flex;
+    width: 100%;
+}
+
+.protected-route-children{
+    width: 78%;
+}

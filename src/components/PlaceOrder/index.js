@@ -30,7 +30,8 @@ class PlaceOrder extends Component {
     }
 
     placeOrderBtn = async () => {
-
+        console.log(this.props)
+        //const {productDetails,quantity} = this.state
     }
 
     render() {
